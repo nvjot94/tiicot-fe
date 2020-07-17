@@ -8,11 +8,12 @@ import axios from 'axios';
  import Navbar from './components/Navbar';
  import Search from './components/Search';
 function App() {
+  const url = 'https://tiicot.herokuapp.com/users';
   const [users,setUsers]=useState([]);
   useEffect(()=>
   {
     M.AutoInit();
-    axios.get('/users')
+    axios.get(url)
           .then(function (response) {
             console.log(response.data);
             setUsers(response.data);
